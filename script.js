@@ -58,6 +58,6 @@ function checkout() {
     message += `%0ATotal: Rp ${total.toLocaleString()}`;
     
     // Ganti dengan nomor WhatsApp Anda
-    const phoneNumber = "082244537515"; 
+    const phoneNumber = "6282244537515"; 
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
 }
