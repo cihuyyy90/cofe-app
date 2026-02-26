@@ -1,279 +1,84 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bean & Brew | Premium Coffee Experience</title>
+    <title>Bean & Brew | Coffee Shop</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .cart-open { transform: translateX(0) !important; }
-        .bg-coffee { background-color: #4b3832; }
-        .text-coffee { color: #4b3832; }
-    </style>
 </head>
 <body class="bg-stone-50 text-stone-800 font-sans">
 
-    <nav class="flex justify-between items-center px-6 md:px-20 py-5 bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
-        <h1 class="text-2xl font-black text-orange-900 tracking-tighter">BEAN & BREW.</h1>
-        <div class="space-x-8 hidden md:flex font-medium">
+    <nav class="flex justify-between items-center px-8 py-6 bg-white shadow-sm sticky top-0 z-50">
+        <h1 class="text-2xl font-bold text-orange-900">BEAN & BREW.</h1>
+        <div class="space-x-6 hidden md:block">
             <a href="#home" class="hover:text-orange-600 transition">Home</a>
-            <a href="#about" class="hover:text-orange-600 transition">About</a>
             <a href="#menu" class="hover:text-orange-600 transition">Menu</a>
-            <a href="#location" class="hover:text-orange-600 transition">Location</a>
+            <a href="#order" class="hover:text-orange-600 transition">Order</a>
         </div>
-        <div class="flex items-center gap-4">
-            <button onclick="toggleCart()" class="relative p-2 bg-stone-100 rounded-full hover:bg-stone-200 transition">
-                <i class="fas fa-shopping-basket text-xl text-orange-900"></i>
-                <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 text-white text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
-            </button>
-        </div>
+        <button onclick="toggleCart()" class="relative p-2">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span id="cart-count" class="absolute -top-1 -right-1 bg-orange-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+        </button>
     </nav>
 
-    <section id="home" class="relative h-[85vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover brightness-50" alt="Hero">
-        </div>
-        <div class="relative z-10 text-center px-4">
-            <span class="text-orange-400 font-bold uppercase tracking-[0.3em] mb-4 block">Est. 2024</span>
-            <h2 class="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">Authentic Coffee <br> & Good Vibes</h2>
-            <p class="text-stone-200 mb-8 max-w-lg mx-auto text-lg">Nikmati sensasi kopi artisan yang diseduh oleh barista berpengalaman untuk harimu yang lebih produktif.</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#menu" class="bg-orange-700 text-white px-10 py-4 rounded-full font-bold hover:bg-orange-800 transition shadow-lg">Lihat Menu</a>
-                <a href="#location" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-full font-bold hover:bg-white/20 transition">Lokasi Kami</a>
-            </div>
+    <section id="home" class="h-[70vh] flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2070')] bg-cover bg-center">
+        <div class="text-center bg-black/40 p-10 rounded-lg backdrop-blur-sm">
+            <h2 class="text-5xl font-serif text-white mb-4">Awali Harimu dengan Kopi Terbaik</h2>
+            <p class="text-stone-200 mb-6">Biji kopi pilihan yang dipanggang dengan penuh cinta.</p>
+            <a href="#menu" class="bg-orange-700 text-white px-8 py-3 rounded-full hover:bg-orange-800 transition">Pesan Sekarang</a>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-6 md:px-20 grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-        <div>
-            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=1000" class="rounded-2xl shadow-2xl" alt="Barista">
-        </div>
-        <div>
-            <h3 class="text-orange-800 font-bold mb-2 tracking-widest uppercase">The Story</h3>
-            <h2 class="text-4xl font-bold mb-6 italic">Dedikasi Dalam Setiap Tetes Kopi</h2>
-            <p class="text-stone-600 leading-relaxed mb-6">Di Bean & Brew, kami percaya bahwa kopi bukan sekadar minuman, tapi sebuah karya seni. Kami bekerja sama langsung dengan petani lokal untuk memastikan setiap biji kopi yang kami sangrai memiliki kualitas tertinggi.</p>
-            <div class="grid grid-cols-2 gap-6 border-t pt-6">
-                <div>
-                    <h4 class="font-bold text-2xl text-orange-900">10+</h4>
-                    <p class="text-sm text-stone-500 uppercase tracking-tighter">Varian Biji Kopi</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-2xl text-orange-900">100%</h4>
-                    <p class="text-sm text-stone-500 uppercase tracking-tighter">Organik & Segar</p>
+    <section id="menu" class="py-20 px-8 max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-12 italic">Menu Favorit</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1541167760496-162955ed8a9f?auto=format&fit=crop&q=80&w=500" alt="Latte" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h4 class="text-xl font-bold">Caffe Latte</h4>
+                <p class="text-stone-500 text-sm mb-4">Espresso halus dengan susu creamy.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-bold text-orange-800">Rp 28.000</span>
+                    <button onclick="addToCart('Caffe Latte', 28000)" class="bg-stone-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-700 transition">+ Keranjang</button>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="menu" class="py-20 bg-stone-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Menu Pilihan Kami</h2>
-                <div class="w-20 h-1 bg-orange-700 mx-auto"></div>
+            <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1510707577719-5d6833042230?auto=format&fit=crop&q=80&w=500" alt="Americano" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h4 class="text-xl font-bold">Americano</h4>
+                <p class="text-stone-500 text-sm mb-4">Shot espresso murni dengan air panas.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-bold text-orange-800">Rp 22.000</span>
+                    <button onclick="addToCart('Americano', 22000)" class="bg-stone-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-700 transition">+ Keranjang</button>
+                </div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1541167760496-162955ed8a9f?auto=format&fit=crop&w=600" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500" alt="Latte">
-                        <span class="absolute top-4 right-4 bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">BEST SELLER</span>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Caffe Latte</h4>
-                        <p class="text-stone-500 text-sm mb-6 leading-relaxed">Campuran espresso premium dengan susu steam yang lembut.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-black text-orange-900">Rp 28.000</span>
-                            <button onclick="addToCart('Caffe Latte', 28000)" class="bg-stone-800 text-white p-3 rounded-xl hover:bg-orange-700 transition"><i class="fas fa-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://richcreme.com/resep-coffee-latte/" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500" alt="Americano">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Americano</h4>
-                        <p class="text-stone-500 text-sm mb-6 leading-relaxed">Double shot espresso murni dengan profil rasa nutty dan bold.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-black text-orange-900">Rp 22.000</span>
-                            <button onclick="addToCart('Americano', 22000)" class="bg-stone-800 text-white p-3 rounded-xl hover:bg-orange-700 transition"><i class="fas fa-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition duration-500 group">
-                    <div class="relative overflow-hidden">
-                        <img src="https://www.nescafe.com/id/id-id/budaya-kopi/pengetahuan/americano-dan-espresso" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500" alt="Brown Sugar">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Brown Sugar Milk</h4>
-                        <p class="text-stone-500 text-sm mb-6 leading-relaxed">Susu segar dengan gula aren organik dan boba kenyal.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-black text-orange-900">Rp 25.000</span>
-                            <button onclick="addToCart('Brown Sugar Milk', 25000)" class="bg-stone-800 text-white p-3 rounded-xl hover:bg-orange-700 transition"><i class="fas fa-plus"></i></button>
-                        </div>
-                    </div>
+            <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-xl transition">
+                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=500" alt="Cappuccino" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h4 class="text-xl font-bold">Cappuccino</h4>
+                <p class="text-stone-500 text-sm mb-4">Keseimbangan sempurna espresso dan foam.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-bold text-orange-800">Rp 30.000</span>
+                    <button onclick="addToCart('Cappuccino', 30000)" class="bg-stone-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-700 transition">+ Keranjang</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="location" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <h2 class="text-4xl font-bold">Kunjungi Kami</h2>
-                <div class="flex items-start gap-4">
-                    <div class="bg-orange-100 p-4 rounded-full text-orange-700"><i class="fas fa-map-marker-alt"></i></div>
-                    <div>
-                        <h4 class="font-bold text-lg">Alamat</h4>
-                        <p class="text-stone-600">Jl. Kopi Harum No. 123, Jakarta Selatan</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-orange-100 p-4 rounded-full text-orange-700"><i class="fas fa-clock"></i></div>
-                    <div>
-                        <h4 class="font-bold text-lg">Jam Operasional</h4>
-                        <p class="text-stone-600 text-sm">Senin - Jumat: 08:00 - 22:00</p>
-                        <p class="text-stone-600 text-sm font-bold">Sabtu - Minggu: 10:00 - 23:00</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="bg-orange-100 p-4 rounded-full text-orange-700"><i class="fas fa-phone"></i></div>
-                    <div>
-                        <h4 class="font-bold text-lg">Kontak</h4>
-                        <p class="text-stone-600">021-555-9000 | bean@brew.id</p>
-                    </div>
-                </div>
-            </div>
-            <div class="h-96 w-full rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126917.382701053!2d106.7891564!3d-6.2415856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e3fa31%3A0x1000000000000000!2sJakarta%20Selatan!5e0!3m2!1sid!2sid!4v1700000000000" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+    <div id="cart-sidebar" class="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-[60] p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-bold">Pesanan Anda</h3>
+            <button onclick="toggleCart()" class="text-2xl">&times;</button>
         </div>
-    </section>
-
-    <footer class="bg-stone-900 text-stone-400 py-16 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 border-b border-stone-800 pb-12 mb-12">
-            <div class="col-span-1 md:col-span-2">
-                <h1 class="text-2xl font-black text-white mb-6">BEAN & BREW.</h1>
-                <p class="max-w-xs mb-6">Ruang santai untuk penikmat kopi sejati. Kami menyediakan biji kopi terbaik dari seluruh nusantara.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="text-2xl hover:text-white transition"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-2xl hover:text-white transition"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-2xl hover:text-white transition"><i class="fab fa-tiktok"></i></a>
-                </div>
+        <div id="cart-items" class="space-y-4 h-[60vh] overflow-y-auto">
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-6 italic">Quick Links</h4>
-                <ul class="space-y-4 text-sm">
-                    <li><a href="#home" class="hover:text-white transition">Beranda</a></li>
-                    <li><a href="#about" class="hover:text-white transition">Tentang Kami</a></li>
-                    <li><a href="#menu" class="hover:text-white transition">Menu</a></li>
-                    <li><a href="#location" class="hover:text-white transition">Lokasi</a></li>
-                </ul>
+        <div class="mt-8 border-t pt-4">
+            <div class="flex justify-between font-bold text-xl mb-6">
+                <span>Total:</span>
+                <span id="cart-total">Rp 0</span>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-6 italic">Newsletter</h4>
-                <p class="text-sm mb-4 text-stone-500 italic text-justify">Dapatkan info promo & produk baru kami.</p>
-                <div class="flex">
-                    <input type="email" placeholder="Email Anda" class="bg-stone-800 px-4 py-2 rounded-l-lg w-full focus:outline-none text-white border-0">
-                    <button class="bg-orange-700 px-4 py-2 rounded-r-lg hover:bg-orange-800"><i class="fas fa-paper-plane text-white"></i></button>
-                </div>
-            </div>
-        </div>
-        <div class="text-center text-sm tracking-widest">
-            &copy; 2026 BEAN & BREW COFFEE. Dibuat dengan <i class="fas fa-heart text-red-600"></i> untuk Pecinta Kopi.
-        </div>
-    </footer>
-
-    <div id="cart-sidebar" class="fixed right-0 top-0 h-full w-full md:w-[400px] bg-white shadow-2xl transform translate-x-full transition-transform duration-500 z-[100] p-8 flex flex-col">
-        <div class="flex justify-between items-center mb-8">
-            <h3 class="text-2xl font-bold flex items-center gap-3"><i class="fas fa-shopping-bag"></i> Keranjang</h3>
-            <button onclick="toggleCart()" class="text-4xl text-stone-400 hover:text-red-500 transition">&times;</button>
-        </div>
-        <div id="cart-items" class="flex-grow space-y-6 overflow-y-auto pr-2">
-            </div>
-        <div class="mt-8 border-t pt-8 space-y-4">
-            <div class="flex justify-between items-end">
-                <span class="text-stone-500">Total Tagihan:</span>
-                <span id="cart-total" class="text-3xl font-black text-orange-900">Rp 0</span>
-            </div>
-            <button onclick="checkout()" class="w-full bg-orange-700 text-white py-5 rounded-2xl font-bold text-lg hover:bg-orange-800 transition shadow-xl active:scale-95 duration-100 flex items-center justify-center gap-3">
-                <i class="fab fa-whatsapp text-xl"></i>
-                Kirim via WhatsApp
-            </button>
+            <button onclick="checkout()" class="w-full bg-orange-700 text-white py-3 rounded-lg font-bold hover:bg-orange-800 transition">Checkout via WhatsApp</button>
         </div>
     </div>
 
-    <script>
-        let cart = [];
-        let total = 0;
-
-        function toggleCart() {
-            const sidebar = document.getElementById('cart-sidebar');
-            sidebar.classList.toggle('translate-x-full');
-        }
-
-        function addToCart(name, price) {
-            cart.push({ name, price });
-            updateCartUI();
-            
-            // Buka keranjang otomatis saat tambah barang
-            const sidebar = document.getElementById('cart-sidebar');
-            if(sidebar.classList.contains('translate-x-full')) toggleCart();
-        }
-
-        function updateCartUI() {
-            const cartItems = document.getElementById('cart-items');
-            const cartCount = document.getElementById('cart-count');
-            const cartTotal = document.getElementById('cart-total');
-            
-            cartItems.innerHTML = '';
-            total = 0;
-            
-            if (cart.length === 0) {
-                cartItems.innerHTML = `<div class="text-center py-20 text-stone-400 italic">Keranjang belanja kosong...</div>`;
-            }
-
-            cart.forEach((item, index) => {
-                total += item.price;
-                cartItems.innerHTML += `
-                    <div class="flex justify-between items-center group bg-stone-50 p-4 rounded-xl">
-                        <div>
-                            <p class="font-bold text-lg text-stone-800">${item.name}</p>
-                            <p class="text-orange-700 font-semibold italic text-sm">Rp ${item.price.toLocaleString()}</p>
-                        </div>
-                        <button onclick="removeItem(${index})" class="bg-red-50 text-red-500 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                `;
-            });
-            
-            cartCount.innerText = cart.length;
-            cartTotal.innerText = `Rp ${total.toLocaleString()}`;
-        }
-
-        function removeItem(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function checkout() {
-            if (cart.length === 0) {
-                alert("Pilih kopi favoritmu dulu!");
-                return;
-            }
-            
-            let message = "*ORDER BEAN & BREW*%0A---------------------------%0A";
-            cart.forEach((item, i) => {
-                message += `${i+1}. *${item.name}* - Rp ${item.price.toLocaleString()}%0A`;
-            });
-            message += "---------------------------%0A";
-            message += `*TOTAL BAYAR: Rp ${total.toLocaleString()}*%0A%0A_Mohon konfirmasi pesanan saya._`;
-            
-            const phoneNumber = "628123456789"; // GANTI DENGAN NOMOR WA KAMU
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
